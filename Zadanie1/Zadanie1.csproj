@@ -52,6 +52,8 @@
     <Compile Include="AddForm.Designer.cs">
       <DependentUpon>AddForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ComboboxItem.cs" />
+    <Compile Include="Data.cs" />
     <Compile Include="EditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +69,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Toys\Car.cs" />
+    <Compile Include="Toys\Computer .cs" />
+    <Compile Include="Toys\Plane.cs" />
+    <Compile Include="Toys\Submarine.cs" />
     <EmbeddedResource Include="AddForm.resx">
       <DependentUpon>AddForm.cs</DependentUpon>
     </EmbeddedResource>

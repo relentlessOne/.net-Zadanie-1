@@ -30,12 +30,14 @@
         {
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.name = new System.Windows.Forms.TextBox();
+            this.atr1 = new System.Windows.Forms.Label();
+            this.atr1Text = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.toysTypesComboBox = new System.Windows.Forms.ComboBox();
+            this.atr2 = new System.Windows.Forms.Label();
+            this.atr2Text = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label3
@@ -60,30 +62,30 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Toy name: ";
             // 
-            // textBox1
+            // name
             // 
-            this.textBox1.Location = new System.Drawing.Point(131, 86);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 13;
+            this.name.Location = new System.Drawing.Point(131, 86);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(121, 20);
+            this.name.TabIndex = 13;
             // 
-            // label2
+            // atr1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("SansSerif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label2.ForeColor = System.Drawing.Color.Snow;
-            this.label2.Location = new System.Drawing.Point(13, 121);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 22);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Attribute: ";
+            this.atr1.AutoSize = true;
+            this.atr1.Font = new System.Drawing.Font("SansSerif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.atr1.ForeColor = System.Drawing.Color.Snow;
+            this.atr1.Location = new System.Drawing.Point(13, 121);
+            this.atr1.Name = "atr1";
+            this.atr1.Size = new System.Drawing.Size(100, 22);
+            this.atr1.TabIndex = 14;
+            this.atr1.Text = "Attribute: ";
             // 
-            // textBox2
+            // atr1Text
             // 
-            this.textBox2.Location = new System.Drawing.Point(131, 121);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 20);
-            this.textBox2.TabIndex = 15;
+            this.atr1Text.Location = new System.Drawing.Point(131, 121);
+            this.atr1Text.Name = "atr1Text";
+            this.atr1Text.Size = new System.Drawing.Size(121, 20);
+            this.atr1Text.TabIndex = 15;
             // 
             // button1
             // 
@@ -104,13 +106,32 @@
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // toysTypesComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(131, 52);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
+            this.toysTypesComboBox.FormattingEnabled = true;
+            this.toysTypesComboBox.Location = new System.Drawing.Point(131, 52);
+            this.toysTypesComboBox.Name = "toysTypesComboBox";
+            this.toysTypesComboBox.Size = new System.Drawing.Size(121, 21);
+            this.toysTypesComboBox.TabIndex = 0;
+            this.toysTypesComboBox.SelectedIndexChanged += new System.EventHandler(this.typeChange);
+            // 
+            // atr2
+            // 
+            this.atr2.AutoSize = true;
+            this.atr2.Font = new System.Drawing.Font("SansSerif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.atr2.ForeColor = System.Drawing.Color.Snow;
+            this.atr2.Location = new System.Drawing.Point(13, 153);
+            this.atr2.Name = "atr2";
+            this.atr2.Size = new System.Drawing.Size(100, 22);
+            this.atr2.TabIndex = 18;
+            this.atr2.Text = "Attribute: ";
+            // 
+            // atr2Text
+            // 
+            this.atr2Text.Location = new System.Drawing.Point(131, 153);
+            this.atr2Text.Name = "atr2Text";
+            this.atr2Text.Size = new System.Drawing.Size(121, 20);
+            this.atr2Text.TabIndex = 19;
             // 
             // AddForm
             // 
@@ -118,14 +139,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.atr2Text);
+            this.Controls.Add(this.atr2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.atr1Text);
+            this.Controls.Add(this.atr1);
+            this.Controls.Add(this.name);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.toysTypesComboBox);
             this.Name = "AddForm";
             this.Text = "AddForm";
             this.ResumeLayout(false);
@@ -136,11 +159,13 @@
         #endregion
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox name;
+        private System.Windows.Forms.Label atr1;
+        private System.Windows.Forms.TextBox atr1Text;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox toysTypesComboBox;
+        private System.Windows.Forms.Label atr2;
+        private System.Windows.Forms.TextBox atr2Text;
     }
 }

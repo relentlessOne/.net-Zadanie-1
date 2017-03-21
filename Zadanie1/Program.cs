@@ -8,6 +8,8 @@ namespace Zadanie1
 {
     static class Program
     {
+
+        public static HomeForm home;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,7 +18,8 @@ namespace Zadanie1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HomeForm());
+            home = new HomeForm();
+            Application.Run(home);
         }
     }
 }
