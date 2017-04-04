@@ -200,6 +200,7 @@
             this.Controls.Add(this.atr1Label);
             this.Controls.Add(this.toyLabel);
             this.Controls.Add(this.toy);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "HomeForm";
             this.Text = "Form1";
             this.ResumeLayout(false);

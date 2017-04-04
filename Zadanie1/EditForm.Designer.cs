@@ -30,14 +30,14 @@
         {
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.atr1Text = new System.Windows.Forms.TextBox();
+            this.atr1 = new System.Windows.Forms.Label();
+            this.name = new System.Windows.Forms.TextBox();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.typeLabel = new System.Windows.Forms.Label();
+            this.type = new System.Windows.Forms.Label();
+            this.atr2Text = new System.Windows.Forms.TextBox();
+            this.atr2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button2
@@ -48,6 +48,7 @@
             this.button2.TabIndex = 25;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.cancelOnClick);
             // 
             // button1
             // 
@@ -57,82 +58,83 @@
             this.button1.TabIndex = 24;
             this.button1.Text = "Ok";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.okOnClick);
             // 
-            // textBox2
+            // atr1Text
             // 
-            this.textBox2.Location = new System.Drawing.Point(141, 117);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 20);
-            this.textBox2.TabIndex = 23;
+            this.atr1Text.Location = new System.Drawing.Point(141, 117);
+            this.atr1Text.Name = "atr1Text";
+            this.atr1Text.Size = new System.Drawing.Size(121, 20);
+            this.atr1Text.TabIndex = 23;
             // 
-            // label2
+            // atr1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("SansSerif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label2.ForeColor = System.Drawing.Color.Snow;
-            this.label2.Location = new System.Drawing.Point(23, 117);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 22);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "Attribute: ";
+            this.atr1.AutoSize = true;
+            this.atr1.Font = new System.Drawing.Font("SansSerif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.atr1.ForeColor = System.Drawing.Color.Snow;
+            this.atr1.Location = new System.Drawing.Point(23, 117);
+            this.atr1.Name = "atr1";
+            this.atr1.Size = new System.Drawing.Size(100, 22);
+            this.atr1.TabIndex = 22;
+            this.atr1.Text = "Attribute: ";
             // 
-            // textBox1
+            // name
             // 
-            this.textBox1.Location = new System.Drawing.Point(141, 82);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 21;
+            this.name.Location = new System.Drawing.Point(141, 82);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(121, 20);
+            this.name.TabIndex = 21;
             // 
-            // label1
+            // nameLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("SansSerif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label1.ForeColor = System.Drawing.Color.Snow;
-            this.label1.Location = new System.Drawing.Point(23, 82);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 22);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Toy name: ";
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Font = new System.Drawing.Font("SansSerif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.nameLabel.ForeColor = System.Drawing.Color.Snow;
+            this.nameLabel.Location = new System.Drawing.Point(23, 82);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(112, 22);
+            this.nameLabel.TabIndex = 20;
+            this.nameLabel.Text = "Toy name: ";
             // 
-            // label3
+            // typeLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("SansSerif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label3.ForeColor = System.Drawing.Color.Snow;
-            this.label3.Location = new System.Drawing.Point(23, 48);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 22);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Toy type:";
+            this.typeLabel.AutoSize = true;
+            this.typeLabel.Font = new System.Drawing.Font("SansSerif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.typeLabel.ForeColor = System.Drawing.Color.Snow;
+            this.typeLabel.Location = new System.Drawing.Point(23, 48);
+            this.typeLabel.Name = "typeLabel";
+            this.typeLabel.Size = new System.Drawing.Size(96, 22);
+            this.typeLabel.TabIndex = 19;
+            this.typeLabel.Text = "Toy type:";
             // 
-            // label4
+            // type
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("SansSerif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label4.Location = new System.Drawing.Point(169, 46);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 25);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "none";
+            this.type.AutoSize = true;
+            this.type.Font = new System.Drawing.Font("SansSerif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.type.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.type.Location = new System.Drawing.Point(136, 45);
+            this.type.Name = "type";
+            this.type.Size = new System.Drawing.Size(63, 25);
+            this.type.TabIndex = 26;
+            this.type.Text = "none";
             // 
-            // textBox3
+            // atr2Text
             // 
-            this.textBox3.Location = new System.Drawing.Point(141, 152);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 20);
-            this.textBox3.TabIndex = 27;
+            this.atr2Text.Location = new System.Drawing.Point(141, 152);
+            this.atr2Text.Name = "atr2Text";
+            this.atr2Text.Size = new System.Drawing.Size(121, 20);
+            this.atr2Text.TabIndex = 27;
             // 
-            // label5
+            // atr2
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("SansSerif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label5.ForeColor = System.Drawing.Color.Snow;
-            this.label5.Location = new System.Drawing.Point(23, 152);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 22);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "Attribute: ";
+            this.atr2.AutoSize = true;
+            this.atr2.Font = new System.Drawing.Font("SansSerif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.atr2.ForeColor = System.Drawing.Color.Snow;
+            this.atr2.Location = new System.Drawing.Point(23, 152);
+            this.atr2.Name = "atr2";
+            this.atr2.Size = new System.Drawing.Size(100, 22);
+            this.atr2.TabIndex = 28;
+            this.atr2.Text = "Attribute: ";
             // 
             // EditForm
             // 
@@ -140,16 +142,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.atr2);
+            this.Controls.Add(this.atr2Text);
+            this.Controls.Add(this.type);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.atr1Text);
+            this.Controls.Add(this.atr1);
+            this.Controls.Add(this.name);
+            this.Controls.Add(this.nameLabel);
+            this.Controls.Add(this.typeLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "EditForm";
             this.Text = "EditForm";
             this.ResumeLayout(false);
@@ -161,13 +164,13 @@
 
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox atr1Text;
+        private System.Windows.Forms.Label atr1;
+        private System.Windows.Forms.TextBox name;
+        private System.Windows.Forms.Label nameLabel;
+        private System.Windows.Forms.Label typeLabel;
+        private System.Windows.Forms.Label type;
+        private System.Windows.Forms.TextBox atr2Text;
+        private System.Windows.Forms.Label atr2;
     }
 }

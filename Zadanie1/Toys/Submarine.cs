@@ -40,5 +40,10 @@ namespace Zadanie1.Toys
             this.dive = dive;
             this.name = name;
         }
+
+        public Submarine()
+        {
+
+        }
     }
 }

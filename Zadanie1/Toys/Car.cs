@@ -27,5 +27,10 @@ namespace Zadanie1.Toys
             this.name = name;
         }
 
+        public Car()
+        {
+            
+        }
+
     }
 }

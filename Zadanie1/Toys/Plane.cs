@@ -39,5 +39,11 @@ namespace Zadanie1.Toys
             this.rise = rise;
             this.name = name;
         }
+
+
+        public Plane()
+        {
+
+        }
     }
 }

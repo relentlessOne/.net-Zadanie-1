@@ -47,6 +47,7 @@ namespace Zadanie1
                     {
                         Data.toys.Add(new Computer(name.Text));
                         MessageBox.Show("Computer added");
+                        Program.home.updateToyCombobox();
                     }
                     else
                     {
@@ -60,6 +61,7 @@ namespace Zadanie1
                     {
                         Data.toys.Add(new Plane(atr1Value, atr2Value, name.Text));
                         MessageBox.Show("Plane added");
+                        Program.home.updateToyCombobox();
                     }
                     else
                     {
@@ -72,6 +74,7 @@ namespace Zadanie1
                     {
                         Data.toys.Add(new Submarine(atr1Value, atr2Value, name.Text));
                         MessageBox.Show("Submarine added");
+                        Program.home.updateToyCombobox();
                     }
                     else
                     {
@@ -101,34 +104,76 @@ namespace Zadanie1
 
         private void updateScene()
         {
+
+            atr1Text.Hide();
+            atr2Text.Hide();
+            atr1.Hide();
+            atr2.Hide();
+
+            object toCreate = new { };
+
             switch (toysTypesComboBox.Text)
             {
                 case "Car":
-                    atr2.Hide();
-                    atr2Text.Hide();
-                    atr1.Text = "Speed:";
+                    toCreate = new Car();
                     break;
                 case "Computer":
-                    atr2.Hide();
-                    atr2Text.Hide();
-                    atr1.Text = "No attribute avaible";
-                    atr1Text.Hide();
+                    toCreate = new Computer();
                     break;
                 case "Plane":
-                    atr2.Show();
-                    atr2Text.Show();
-                    atr1Text.Show();
-                    atr1.Text = "Speed:";
-                    atr2.Text = "Rise:";
+                    toCreate = new Plane();
                     break;
                 case "Submarine":
-                    atr2.Show();
-                    atr2Text.Show();
-                    atr1Text.Show();
-                    atr1.Text = "Speed:";
-                    atr2.Text = "Dive:";
+                    toCreate = new Submarine();
                     break;
             }
+
+            int count = 0;
+            Type objectType = toCreate.GetType();
+            Type[] ifaces = objectType.GetInterfaces();
+            foreach (Type i in ifaces) { 
+                Console.WriteLine("Interface: {0}", i.Name);
+
+                if(i.Name == "IAccelerate")
+                {
+                    atr1Text.Show();     
+                    atr1.Text = "Speed:";
+                    atr1.Show();
+                }
+
+                if (i.Name == "IDive")
+                {
+                    atr2Text.Show();
+                    atr2.Text = "Dive:";
+                    atr2.Show();
+                }
+
+                if (i.Name == "IRise")
+                {
+                    atr2Text.Show();
+                    atr2.Text = "Rise:";
+                    atr2.Show();
+                }
+
+                count++;
+
+            }
+
+
+            if(count == 0)
+            {
+
+                atr1.Text = "No attribute available";
+                atr1.Show();
+            }
+
+
+
+        }
+
+        private void cancelOnClick(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
