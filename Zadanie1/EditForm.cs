@@ -130,6 +130,7 @@ namespace Zadanie1
 
             int atr1Value;
             int atr2Value;
+            bool wrongFormat = false;
 
             int counter = 0;
 
@@ -141,8 +142,17 @@ namespace Zadanie1
                     if (o is Car)
                     {
                         Car c = (Car)obj;
-         
-                        c.speed = Int32.Parse(atr1Text.Text);
+
+
+                        if (int.TryParse(atr1Text.Text, out atr1Value))
+                        {
+                            c.speed = atr1Value;
+                        } else
+                        {
+                            wrongFormat = true;
+                            break;
+                        }
+                         
                         c.name = name.Text;
                         Data.toys[counter] = (Object)c;
                         break;
@@ -151,8 +161,28 @@ namespace Zadanie1
                     if (o is Plane)
                     {
                         Plane c = (Plane)obj;
-                        c.speed = Int32.Parse(atr1Text.Text);
-                        c.rise = Int32.Parse(atr2Text.Text);
+
+                        if (int.TryParse(atr1Text.Text, out atr1Value))
+                        {
+                            c.speed = atr1Value;
+                        }
+                        else
+                        {
+                            wrongFormat = true;
+                            break;
+                        }
+
+
+                        if (int.TryParse(atr2Text.Text, out atr2Value))
+                        {
+                            c.rise = atr2Value;
+                        }
+                        else
+                        {
+                            wrongFormat = true;
+                            break;
+                        }
+
                         c.name = name.Text;
                         Data.toys[counter] = (Object)c;
                         break;
@@ -171,8 +201,26 @@ namespace Zadanie1
                     if (o is Submarine)
                     {
                         Submarine c = (Submarine)o;
-                        c.speed = Int32.Parse(atr1Text.Text);
-                        c.dive = Int32.Parse(atr2Text.Text);
+                        if (int.TryParse(atr1Text.Text, out atr1Value))
+                        {
+                            c.speed = atr1Value;
+                        }
+                        else
+                        {
+                            wrongFormat = true;
+                            break;
+                        }
+
+
+                        if (int.TryParse(atr2Text.Text, out atr2Value))
+                        {
+                            c.dive = atr2Value;
+                        }
+                        else
+                        {
+                            wrongFormat = true;
+                            break;
+                        }
                         c.name = name.Text;
                         Data.toys[counter] = (Object)c;
                         break;
@@ -184,8 +232,17 @@ namespace Zadanie1
                 counter++;
             }
 
-            Program.home.refreshComboBox(counter);
-            this.Close();
+            if (wrongFormat)
+            {
+                MessageBox.Show("Wrong format");
+            }
+            else
+            {
+                Program.home.refreshComboBox(counter);
+                this.Close();
+            }
+
+
         }
 
         private void cancelOnClick(object sender, EventArgs e)
